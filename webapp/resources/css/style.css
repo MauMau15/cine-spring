@@ -39,6 +39,14 @@
 body{
 	padding:0;
 	margin:0;
+	position:relative;
+	padding-bottom:15rem;
+}
+
+footer{
+	position:absolute;
+	bottom:0;
+	width:100%;
 }
 
 .container-fluid{
