@@ -19,19 +19,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<%-- 
-	<h1>Lista de peliculas</h1>
-	<ol>
-		<c:forEach items="${ peliculas }" var="pelicula">
-			<li>${ pelicula }</li>
-		</c:forEach>
-	</ol>
-	--%>
-
+	
 	<jsp:include page="includes/menu.jsp"></jsp:include>
-
-
-
 
 	<div class="container-fluid pb-5">
 		<div id="carouselExampleControls" class="carousel slide"
@@ -176,54 +165,7 @@
 			</div>
 		</div>
 
-
-
-	<!-- 
-	<div class="container my-5">
-		<h1 class="display-4">Lista de peliculas</h1>
-		<table class="table table-striped table-responsive-sm table-bordered">
-			<thead>
-				<tr>
-					<th scope="col">ID</th>
-					<th scope="col">Titulo</th>
-					<th scope="col">Duracion</th>
-					<th scope="col">Clasificacion</th>
-					<th scope="col">Genero</th>
-					<th scope="col">Imagen</th>
-					<th scope="col">Fecha Estreno</th>
-					<th scope="col">Status</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${ peliculas }" var="pelicula">
-					<tr>
-						<td scope="row">${ pelicula.id }</td>
-						<td>${ pelicula.titulo }</td>
-						<td>${ pelicula.duracion }</td>
-						<td>${ pelicula.clasificacion }</td>
-						<td>${ pelicula.genero }</td>
-						<td><img src="${ urlPublic }/img/${ pelicula.imagen }"></td>
-						<td><fmt:formatDate value="${ pelicula.fechaEstreno }"
-								pattern="dd-MM-yyyy" /></td>
-						<td><c:choose>
-								<c:when test="${ pelicula.status == 'Activa' }">
-									<span class="badge badge-success">ACTIVA</span>
-								</c:when>
-								<c:otherwise>
-									<span class="badge badge-danger">INACTIVA</span>
-								</c:otherwise>
-							</c:choose></td>
-					</tr>
-				</c:forEach>
-
-			</tbody>
-			<tbody>
-
-			</tbody>
-		</table>
-	</div>
-
- -->
+		<jsp:include page="includes/footer.jsp"></jsp:include>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
