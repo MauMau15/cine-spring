@@ -31,7 +31,7 @@ public class HomeController {
 		
 		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
 		List<Pelicula> peliculas = null;
-		Pelicula peli1 = null, peli2 = null;
+		Pelicula peli1 = null, peli2 = null, peli3=null, peli4=null;
 		try {
 			peliculas = new LinkedList<>();
 			
@@ -42,17 +42,42 @@ public class HomeController {
 			peli1.setDuracion(152);
 			peli1.setGenero("terror");
 			peli1.setClasificacion("C");
+			peli1.setImagen("estreno1.png");
 			
 			peli2 = new Pelicula();
-			peli2.setId(1);
+			peli2.setId(2);
 			peli2.setTitulo("Aliens");
 			peli2.setFechaEstreno(format.parse("18-06-2008"));
 			peli2.setDuracion(102);
 			peli2.setGenero("infantil");
 			peli2.setClasificacion("A");
+			peli2.setStatus("Inactiva");
+			peli2.setImagen("estreno2.png");
+			
+			peli3 = new Pelicula();
+			peli3.setId(3);
+			peli3.setTitulo("Life");
+			peli3.setFechaEstreno(format.parse("18-06-2008"));
+			peli3.setDuracion(122);
+			peli3.setGenero("thriller");
+			peli3.setClasificacion("B");
+			peli3.setStatus("Activa");
+			peli3.setImagen("estreno3.png");
+			
+			peli4 = new Pelicula();
+			peli4.setId(4);
+			peli4.setTitulo("Power Rangers");
+			peli4.setFechaEstreno(format.parse("18-06-2008"));
+			peli4.setDuracion(125);
+			peli4.setGenero("terror");
+			peli4.setClasificacion("A");
+			peli4.setStatus("Inactiva");
+			peli4.setImagen("estreno4.png");
 			
 			peliculas.add(peli1);
 			peliculas.add(peli2);
+			peliculas.add(peli3);
+			peliculas.add(peli4);
 			
 			model.addAttribute("peliculas",peliculas);
 		}catch(ParseException e) {
