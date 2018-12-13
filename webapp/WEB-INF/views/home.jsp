@@ -14,6 +14,7 @@
 		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 		crossorigin="anonymous">
 	<spring:url value="/resources" var="urlPublic" />
+	<spring:url value="/" var="urlRoot" />
 	<link rel="stylesheet" href="${ urlPublic }/css/style.css" />
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,17 +61,16 @@
 			</div>
 		</div>
 		<div class="my-5">
-			<form action="#" method="post">
+			<form action="${ urlRoot }search" method="post">
 				<div class="row">
 					<div class="col-2 col-md-1">
 						<label for="fecha">Fecha: </label> 
 					</div>
 					<div class="col-4 col-md-3 col-lg-2">
 						<select id="fecha" name="fecha" class="form-control">
-							<option value="01-05-2017">01-05-2017</option>
-							<option value="02-05-2017">02-05-2017</option>
-							<option value="03-05-2017">03-05-2017</option>
-							<option value="04-05-2017">04-05-2017</option>
+						<c:forEach items="${ dias }" var="dia">
+							<option value="${ dia }">${ dia }</option>
+						</c:forEach>
 						</select>
 					</div>
 					<div class="col-4 col-md-3 col-lg-2">
