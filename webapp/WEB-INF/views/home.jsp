@@ -84,7 +84,7 @@
 	<div class="container marketing pt-2 pb-3">
 		<div class="row">
 			<c:forEach items="${ peliculas }" var="pelicula">
-				<div class="col-xs-12 col-sm-6 col-md-3">
+				<div  class="col-xs-12 col-sm-6 col-md-3">
 					<img class="img-estreno rounded"
 						src="${ urlPublic }/img/${ pelicula.imagen }"
 						alt="${ pelicula.titulo }">
@@ -95,7 +95,7 @@
 						<span class="badge badge-secondary">${ pelicula.genero }</span>
 					</p>
 					<p>
-						<a class="btn btn-sm btn-primary" href="#" role="button">Consulta Horarios &raquo;</a>
+						<a class="btn btn-sm btn-primary" href="detail/${ pelicula.id }/${ fechaBusqueda }" role="button">Consulta Horarios &raquo;</a>
 					</p>
 				</div>
 			</c:forEach>
