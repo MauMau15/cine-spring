@@ -27,20 +27,56 @@ public class HomeController {
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String mostrarPrincipal(Model model) {
-		/*List<String> peliculas = new LinkedList<>();
-		peliculas.add("Rápidos y furiosos");
-		peliculas.add("El aro 2");
-		peliculas.add("Aliens");
-		
-		model.addAttribute("peliculas", peliculas);*/
-		
 		Utileria util = new Utileria();
 		List<String> nextDays = util.getNextDays(7);
 		
 		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+		List<Pelicula> peliculas = getPeliculas();
 		
+		model.addAttribute("peliculas", peliculas);
+		model.addAttribute("fechaBusqueda", format.format(new Date()));
+		model.addAttribute("dias", nextDays);
+		
+		return "/home";
+	}
+	
+	@RequestMapping(value="/search", method=RequestMethod.POST)
+	public String buscar(Model model, @RequestParam("fecha") String fecha) {
+		Utileria util = new Utileria();
+		List<String> nextDays = util.getNextDays(7);
+		
+		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+		List<Pelicula> peliculas = getPeliculas();
+		
+		model.addAttribute("peliculas", peliculas);
+		model.addAttribute("fechaBusqueda", fecha);
+		model.addAttribute("dias", nextDays);
+		return "home";
+	}
+	
+	/*
+	 * With path variable
+	 * @RequestMapping(value="/detail/{id}/{fecha}", method=RequestMethod.GET)
+	public String mostrarDetalle(Model model, @PathVariable("id") int idPelicula, @PathVariable("fecha") String fecha) {
+		System.out.println("Buscar "+ idPelicula);
+		System.out.println("Fecha " + fecha);
+		return "/detalle";
+	}*/
+	
+	/*with request param*/
+	@RequestMapping(value="/detail", method=RequestMethod.GET)
+	public String mostrarDetalle(Model model, @RequestParam("id") int idPelicula, @RequestParam("fecha") String fecha) {
+		System.out.println("Buscar "+ idPelicula);
+		System.out.println("Fecha " + fecha);
+		
+		
+		return "detalle";
+	}
+	
+	private List<Pelicula> getPeliculas(){
 		List<Pelicula> peliculas = null;
 		Pelicula peli1 = null, peli2 = null, peli3=null, peli4=null;
+		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
 		try {
 			
 			peliculas = new LinkedList<>();
@@ -90,39 +126,13 @@ public class HomeController {
 			peliculas.add(peli3);
 			peliculas.add(peli4);
 			
-			model.addAttribute("peliculas", peliculas);
-			model.addAttribute("fechaBusqueda", format.format(new Date()));
-			model.addAttribute("dias", nextDays);
+			
 			
 		}catch(ParseException e) {
 			System.out.println(e);
 		}
 		
-		return "/home";
+		return peliculas;
 	}
 	
-	/*
-	 * With path variable
-	 * @RequestMapping(value="/detail/{id}/{fecha}", method=RequestMethod.GET)
-	public String mostrarDetalle(Model model, @PathVariable("id") int idPelicula, @PathVariable("fecha") String fecha) {
-		System.out.println("Buscar "+ idPelicula);
-		System.out.println("Fecha " + fecha);
-		return "/detalle";
-	}*/
-	
-	/*with request param*/
-	@RequestMapping(value="/detail", method=RequestMethod.GET)
-	public String mostrarDetalle(Model model, @RequestParam("id") int idPelicula, @RequestParam("fecha") String fecha) {
-		System.out.println("Buscar "+ idPelicula);
-		System.out.println("Fecha " + fecha);
-		
-		
-		return "detalle";
-	}
-	
-	@RequestMapping(value="/search", method=RequestMethod.POST)
-	public String buscar(@RequestParam("fecha") String fecha) {
-		System.out.println(fecha);
-		return "home";
-	}
 }

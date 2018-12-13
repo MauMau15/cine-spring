@@ -69,7 +69,14 @@
 					<div class="col-4 col-md-3 col-lg-2">
 						<select id="fecha" name="fecha" class="form-control">
 						<c:forEach items="${ dias }" var="dia">
-							<option value="${ dia }">${ dia }</option>
+							<c:choose>
+								<c:when test="${ dia == fechaBusqueda }">
+									<option value="${ dia }" selected>${ dia }</option>	
+								</c:when>
+								<c:otherwise>
+									<option value="${ dia }">${ dia }</option>
+								</c:otherwise>
+							</c:choose>
 						</c:forEach>
 						</select>
 					</div>
