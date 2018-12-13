@@ -95,7 +95,13 @@
 						<span class="badge badge-secondary">${ pelicula.genero }</span>
 					</p>
 					<p>
+					<!--
+						With PathVariable 
 						<a class="btn btn-sm btn-primary" href="detail/${ pelicula.id }/${ fechaBusqueda }" role="button">Consulta Horarios &raquo;</a>
+					 -->
+					 
+					 <!-- With Request Param -->
+						<a class="btn btn-sm btn-primary" href="detail?id=${ pelicula.id }&fecha=${ fechaBusqueda }" role="button">Consulta Horarios &raquo;</a>					 
 					</p>
 				</div>
 			</c:forEach>

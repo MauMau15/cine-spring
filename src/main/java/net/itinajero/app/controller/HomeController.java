@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import net.itinajero.app.model.Pelicula;
 
@@ -97,11 +98,21 @@ public class HomeController {
 		return "/home";
 	}
 	
-	@RequestMapping(value="/detail/{id}/{fecha}", method=RequestMethod.GET)
+	/*
+	 * With path variable
+	 * @RequestMapping(value="/detail/{id}/{fecha}", method=RequestMethod.GET)
 	public String mostrarDetalle(Model model, @PathVariable("id") int idPelicula, @PathVariable("fecha") String fecha) {
 		System.out.println("Buscar "+ idPelicula);
 		System.out.println("Fecha " + fecha);
 		return "/detalle";
+	}*/
+	
+	/*with request param*/
+	@RequestMapping(value="/detail", method=RequestMethod.GET)
+	public String mostrarDetalle(Model model, @RequestParam("id") int idPelicula, @RequestParam("fecha") String fecha) {
+		System.out.println("Buscar "+ idPelicula);
+		System.out.println("Fecha " + fecha);
+		return "detalle";
 	}
 	
 	/*@RequestMapping(value="/detail")
