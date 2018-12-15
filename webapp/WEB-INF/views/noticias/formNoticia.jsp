@@ -24,7 +24,8 @@
 				<span class="badge badge-success">Crear Noticia</span>
 			</h2>
 		</div>
-		<form class="form mt-5">
+		<spring:url value="/noticias/save" var="urlFormNoticias"></spring:url>
+		<form class="form mt-5" method="post" action="${ urlFormNoticias }">
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
