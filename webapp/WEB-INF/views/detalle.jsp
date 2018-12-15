@@ -7,8 +7,6 @@
 <title>Detalle</title>
 </head>
 <body>
-	<h1>Titulo de la pelicula ${ titulo }</h1>
-	<h2>Duración ${ duracion }</h2>
-	<h2>Precio ${ precio }</h2>
+	<h1>${ pelicula }</h1>
 </body>
 </html>
