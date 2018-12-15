@@ -53,3 +53,26 @@ footer{
 	margin:0;
 	padding:0;
 }
+
+@media (max-width:768px) { 
+	
+	.mb-sma-1{
+		margin-bottom:.25rem !important;
+	}
+	
+	.mb-sma-2{
+		margin-bottom:1rem !important;
+	}
+	
+	.mb-sma-3{
+		margin-bottom:1.5rem !important;
+	}
+	
+	.mb-sma-4{
+		margin-bottom:2rem !important;
+	}
+	
+	.mb-sma-5{
+		margin-bottom:2.5rem !important;
+	}
+}
