@@ -5,8 +5,11 @@ import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import net.itinajero.app.model.Pelicula;
 
+@Service
 public class PeliculasServiceImpl implements IPeliculasService{
 
 	private List<Pelicula> peliculas = null;
