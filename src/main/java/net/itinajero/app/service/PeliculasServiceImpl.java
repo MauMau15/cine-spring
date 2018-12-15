@@ -76,5 +76,16 @@ public class PeliculasServiceImpl implements IPeliculasService{
 		// TODO Auto-generated method stub
 		return this.peliculas;
 	}
+
+	@Override
+	public Pelicula buscarPorId(int idPelicula) {
+		// TODO Auto-generated method stub
+		for(Pelicula pelicula : this.peliculas) {
+			if(pelicula.getId() == idPelicula) {
+				return pelicula;
+			}
+		}
+		return null;
+	}
 	
 }
