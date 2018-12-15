@@ -70,6 +70,8 @@ public class HomeController {
 		System.out.println("Buscar "+ idPelicula);
 		System.out.println("Fecha " + fecha);
 		
+		model.addAttribute("pelicula", servicePeliculas.buscarPorId(idPelicula));
+		
 		
 		return "detalle";
 	}
