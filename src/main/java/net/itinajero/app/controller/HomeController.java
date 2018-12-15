@@ -71,6 +71,7 @@ public class HomeController {
 		System.out.println("Fecha " + fecha);
 		
 		model.addAttribute("pelicula", servicePeliculas.buscarPorId(idPelicula));
+		model.addAttribute("fechaConsultada",fecha);
 		
 		
 		return "detalle";
