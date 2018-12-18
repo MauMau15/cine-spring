@@ -30,13 +30,13 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="titulo">Título</label>
-						<input type="text" class="form-control" name="tituloNoticia" id="tituloNoticia">
+						<input type="text" class="form-control" name="titulo" id="titulo">
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
-						<label for="statusNoticia">Estatus</label>
-						<select name="estatus"  id="statusNoticia" class="form-control">
+						<label for="estatus">Estatus</label>
+						<select name="estatus"  id="estatus" class="form-control">
 							<option value="activa">Activa</option>
 							<option value="inactiva">Inactiva</option>
 						</select>
@@ -47,7 +47,7 @@
 				<div clasS="col-12">
 					<div class="form-group">
 						<label for="contenido">Contenido</label>
-						<textarea class="form-control" id="contenidoNoticia" name="contenidoNoticia"></textarea>
+						<textarea class="form-control" id="contenido" name="contenido"></textarea>
 					</div>
 				</div>
 			</div>
