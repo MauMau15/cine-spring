@@ -24,7 +24,7 @@ public class PeliculasServiceImpl implements IPeliculasService{
 			peli1 = new Pelicula();
 			peli1.setId(1);
 			peli1.setTitulo("El aro 2");
-			peli1.setFechaEstreno(format.parse("2018-05-28"));
+			peli1.setFechaEstreno(format.parse("28-05-2018"));
 			peli1.setDuracion(152);
 			peli1.setGenero("terror");
 			peli1.setClasificacion("C");
@@ -34,7 +34,7 @@ public class PeliculasServiceImpl implements IPeliculasService{
 			peli2 = new Pelicula();
 			peli2.setId(2);
 			peli2.setTitulo("Aliens");
-			peli2.setFechaEstreno(format.parse("2018-05-28"));
+			peli2.setFechaEstreno(format.parse("12-01-2018"));
 			peli2.setDuracion(102);
 			peli2.setGenero("infantil");
 			peli2.setClasificacion("A");
@@ -44,7 +44,7 @@ public class PeliculasServiceImpl implements IPeliculasService{
 			peli3 = new Pelicula();
 			peli3.setId(3);
 			peli3.setTitulo("Life");
-			peli3.setFechaEstreno(format.parse("2018-05-28"));
+			peli3.setFechaEstreno(format.parse("05-07-2018"));
 			peli3.setDuracion(122);
 			peli3.setGenero("thriller");
 			peli3.setClasificacion("B");
@@ -54,7 +54,7 @@ public class PeliculasServiceImpl implements IPeliculasService{
 			peli4 = new Pelicula();
 			peli4.setId(4);
 			peli4.setTitulo("Power Rangers");
-			peli4.setFechaEstreno(format.parse("2018-05-28"));
+			peli4.setFechaEstreno(format.parse("10-10-2018"));
 			peli4.setDuracion(125);
 			peli4.setGenero("terror");
 			peli4.setClasificacion("A");
@@ -86,6 +86,12 @@ public class PeliculasServiceImpl implements IPeliculasService{
 			}
 		}
 		return null;
+	}
+
+	@Override
+	public void crearPelicula(Pelicula pelicula) {
+		// TODO Auto-generated method stub
+		System.out.println(pelicula);
 	}
 	
 }
