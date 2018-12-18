@@ -9,9 +9,9 @@ public class Noticia {
 	private String estatus;
 	private String contenido;
 	private Date fecha;
-	
+
 	public Noticia() {
-		fecha = new Date();
+		setFecha(new Date());
 	}
 
 	public int getId() {
@@ -49,5 +49,13 @@ public class Noticia {
 	@Override
 	public String toString() {
 		return "Noticia [id=" + id + ", titulo=" + titulo + ", estatus=" + estatus + ", contenido=" + contenido + "]";
+	}
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 }
