@@ -23,12 +23,7 @@ public class NoticiasController {
 	}
 	
 	@PostMapping(value="/save")
-	public String guardar(@RequestParam("tituloNoticia") String titulo, @RequestParam("statusNoticia") String status, @RequestParam("contenidoNoticia") String contenido) {
-		Noticia noticia = new Noticia();
-		
-		noticia.setTitulo(titulo);
-		noticia.setEstatus(status);
-		noticia.setContenido(contenido);
+	public String guardar(Noticia noticia) {
 		
 		noticiasService.guardar(noticia);
 		
