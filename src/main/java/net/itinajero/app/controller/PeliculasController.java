@@ -1,7 +1,5 @@
 package net.itinajero.app.controller;
 
-import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -25,6 +23,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import net.itinajero.app.model.Pelicula;
 import net.itinajero.app.service.IPeliculasService;
+import net.itinajero.app.utileries.Utileria;
 
 @Controller
 @RequestMapping("/peliculas")
@@ -58,35 +57,12 @@ public class PeliculasController {
 		}
 		
 		if(!multipart.isEmpty()) {
-			String nombreImagen = guardarImagen(multipart,request);
+			String nombreImagen = Utileria.guardarImagen(multipart, request);
 			pelicula.setImagen(nombreImagen);
 		}
 		
 		attribute.addFlashAttribute("mensaje","El registro fue realizado con éxito");
 		return "redirect:/peliculas/index";
-	}
-	
-	
-	
-	private String guardarImagen(MultipartFile multipart, HttpServletRequest request) {
-		
-		String nombreOriginal = multipart.getOriginalFilename();
-		System.out.println("Original " + nombreOriginal);
-		
-		String rutaFinal = request.getServletContext().getRealPath("/resources/img/");
-		System.out.println("Ruta " + rutaFinal + nombreOriginal);
-		
-		try {
-			File imageFile = new File(rutaFinal +  nombreOriginal);
-			System.out.println(imageFile.getAbsolutePath());
-			multipart.transferTo(imageFile);
-			
-			return nombreOriginal;
-		}catch(IOException e) {
-			System.out.println("Error "+ e.getMessage());
-			return null;
-		}
-		
 	}
 
 	@InitBinder

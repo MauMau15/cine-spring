@@ -28,8 +28,7 @@ public class HomeController {
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String mostrarPrincipal(Model model) {
-		Utileria util = new Utileria();
-		List<String> nextDays = util.getNextDays(7);
+		List<String> nextDays = Utileria.getNextDays(4);
 		
 		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
 		List<Pelicula> peliculas = servicePeliculas.buscarTodas();
@@ -43,10 +42,7 @@ public class HomeController {
 	
 	@RequestMapping(value="/search", method=RequestMethod.POST)
 	public String buscar(Model model, @RequestParam("fecha") String fecha) {
-		Utileria util = new Utileria();
-		List<String> nextDays = util.getNextDays(4);
-		
-		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+		List<String> nextDays = Utileria.getNextDays(4);
 		List<Pelicula> peliculas = servicePeliculas.buscarTodas();
 		
 		model.addAttribute("peliculas", peliculas);
