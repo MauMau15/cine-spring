@@ -42,7 +42,7 @@
 		</spring:hasBindErrors>
 		
 		<spring:url value="/peliculas/save" var="urlFormPelicula"></spring:url>
-		<form class="form mt-5" action="${ urlFormPelicula }" method="post" >
+		<form class="form mt-5" action="${ urlFormPelicula }" method="post" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col-12 col-md-3">
 					<div class="form-group">
@@ -99,7 +99,7 @@
 				<div class="col-12 col-md-6">
 					<div class="form-group">
 						<label for="imagen">Imagen</label>
-						<input type="file" name="archivo" id="imagen" class="form-control-file">
+						<input type="file" name="imagen" id="imagen" class="form-control-file">
 						<small class="text-muted">Selecciona la imagen</small>
 					</div>
 				</div>
