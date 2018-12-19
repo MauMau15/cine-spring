@@ -3,6 +3,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,41 +43,41 @@
 		</spring:hasBindErrors>
 		
 		<spring:url value="/peliculas/save" var="urlFormPelicula"></spring:url>
-		<form class="form mt-5" action="${ urlFormPelicula }" method="post" enctype="multipart/form-data">
+		<form:form class="form mt-5" action="${ urlFormPelicula }" method="post" enctype="multipart/form-data" modelAttribute="pelicula">
 			<div class="row">
 				<div class="col-12 col-md-3">
 					<div class="form-group">
 						<label for="titulo">Título</label>
-						<input type="text" name="titulo" id="titulo" class="form-control">
+						<form:input type="text" path="titulo" id="titulo" class="form-control"></form:input>
 					</div>
 				</div>
 				<div class="col-12 col-md-3">
 					<div class="form-group">
 						<label for="duracion">Duración</label>
-						<input type="text" name="duracion" id="duracion" class="form-control">
+						<form:input type="text" path="duracion" id="duracion" class="form-control"></form:input>
 					</div>
 				</div>
 				<div class="col-12 col-md-3">
 					<div class="form-group">
 						<label for="clasificacion">Clasificación</label>
-						<select name="clasificacion" id="clasificacion" class="form-control">
-							<option value="A">Clasificación A</option>
-							<option value="B">Clasificación B</option>
-							<option value="C">Clasificación C</option>
-							<option value="D">Clasificación D</option>
-						</select>
+						<form:select path="clasificacion" id="clasificacion" class="form-control">
+							<form:option value="A">Clasificación A</form:option>
+							<form:option value="B">Clasificación B</form:option>
+							<form:option value="C">Clasificación C</form:option>
+							<form:option value="D">Clasificación D</form:option>
+						</form:select>
 					</div>
 				</div>
 				<div class="col-12 col-md-3">
 					<div class="form-group">
 						<label for="genero">Género</label>
-						<select name="genero" id="genero" class="form-control">
-							<option value="terror">Terror</option>
-							<option value="comedia">Comedia</option>
-							<option value="accion">Acción</option>
-							<option value="aventura">Aventura</option>
-							<option value="drama">Drama</option>
-						</select>
+						<form:select path="genero" id="genero" class="form-control">
+							<form:option value="terror">Terror</form:option>
+							<form:option value="comedia">Comedia</form:option>
+							<form:option value="accion">Acción</form:option>
+							<form:option value="aventura">Aventura</form:option>
+							<form:option value="drama">Drama</form:option>
+						</form:select>
 					</div>
 				</div>
 			</div>
@@ -84,16 +85,16 @@
 				<div class="col-12 col-md-3">
 					<div class="form-group">
 						<label for="status">Estatus</label>
-						<select name="status"  id="status" class="form-control">
-							<option value="activa">Activa</option>
-							<option value="inactiva">Inactiva</option>
-						</select>
+						<form:select path="status"  id="status" class="form-control">
+							<form:option value="activa">Activa</form:option>
+							<form:option value="inactiva">Inactiva</form:option>
+						</form:select>
 					</div>
 				</div>
 				<div class="col-12 col-md-3">
 					<div class="form-group">
 						<label for="fechaEstreno">Fecha de estreno</label>
-						<input type="date" name="fechaEstreno" id="fechaEstreno" class="form-control">
+						<form:input type="date" path="fechaEstreno" id="fechaEstreno" class="form-control"></form:input>
 					</div>
 				</div>
 				<div class="col-12 col-md-6">
@@ -111,7 +112,7 @@
 					</div>
 				</div>
 			</div>
-		</form>
+		</form:form>
 	</div>
 	
 	<jsp:include page="../includes/footer.jsp"></jsp:include>
