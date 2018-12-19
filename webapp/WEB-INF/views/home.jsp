@@ -17,6 +17,7 @@
 	<spring:url value="/" var="urlRoot" />
 	<link rel="stylesheet" href="${ urlPublic }/css/style.css" />
 	
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -27,18 +28,20 @@
 		<div id="carouselExampleControls" class="carousel slide"
 			data-ride="carousel">
 			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img class="d-block w-100" src="${ urlPublic }/img/slide1.jpg"
-						alt="First slide">
-				</div>
-				<div class="carousel-item">
-					<img class="d-block w-100" src="${ urlPublic }/img/slide2.jpg"
-						alt="Second slide">
-				</div>
-				<div class="carousel-item">
-					<img class="d-block w-100" src="${ urlPublic }/img/slide3.jpg"
-						alt="Third slide">
-				</div>
+				<c:forEach items="${ banners }" var="banner" varStatus="loop">
+					<c:choose>
+						<c:when test="${ loop.index eq 0 }">
+							<div class="carousel-item active">
+								<img class="d-block w-100" src="${ urlPublic }/img/${ banner.imagen }" alt="${ banner.nombre }">
+							</div>
+						</c:when>
+						<c:otherwise>
+							<div class="carousel-item">
+								<img class="d-block w-100" src="${ urlPublic }/img/${ banner.imagen }" alt="${ banner.nombre }">
+							</div>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
 			</div>
 			<a class="carousel-control-prev" href="#carouselExampleControls"
 				role="button" data-slide="prev"> <span
