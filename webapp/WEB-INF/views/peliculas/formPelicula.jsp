@@ -99,7 +99,7 @@
 				<div class="col-12 col-md-6">
 					<div class="form-group">
 						<label for="imagen">Imagen</label>
-						<input type="file" name="imagen" id="imagen" class="form-control-file">
+						<input type="file" name="archivoImagen" id="imagen" class="form-control-file">
 						<small class="text-muted">Selecciona la imagen</small>
 					</div>
 				</div>

@@ -61,10 +61,10 @@ public class PeliculasServiceImpl implements IPeliculasService{
 			peli4.setStatus("Inactiva");
 			peli4.setImagen("estreno4.png");
 			
-			this.peliculas.add(peli1);
-			this.peliculas.add(peli2);
-			this.peliculas.add(peli3);
-			this.peliculas.add(peli4);
+			peliculas.add(peli1);
+			peliculas.add(peli2);
+			peliculas.add(peli3);
+			peliculas.add(peli4);
 			
 		}catch(ParseException e) {
 			System.out.println(e);
@@ -74,13 +74,13 @@ public class PeliculasServiceImpl implements IPeliculasService{
 	@Override
 	public List<Pelicula> buscarTodas() {
 		// TODO Auto-generated method stub
-		return this.peliculas;
+		return peliculas;
 	}
 
 	@Override
 	public Pelicula buscarPorId(int idPelicula) {
 		// TODO Auto-generated method stub
-		for(Pelicula pelicula : this.peliculas) {
+		for(Pelicula pelicula : peliculas) {
 			if(pelicula.getId() == idPelicula) {
 				return pelicula;
 			}
@@ -91,7 +91,7 @@ public class PeliculasServiceImpl implements IPeliculasService{
 	@Override
 	public void crearPelicula(Pelicula pelicula) {
 		// TODO Auto-generated method stub
-		System.out.println(pelicula);
+		peliculas.add(pelicula);
 	}
 	
 }
