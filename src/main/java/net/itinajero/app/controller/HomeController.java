@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import net.itinajero.app.model.Pelicula;
+import net.itinajero.app.service.IBannersService;
 import net.itinajero.app.service.IPeliculasService;
 import net.itinajero.app.utileries.Utileria;
 
@@ -20,6 +21,9 @@ public class HomeController {
 	
 	@Autowired
 	private IPeliculasService servicePeliculas;
+	
+	@Autowired
+	private IBannersService serviceBanners;
 	
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public String getHome() {
@@ -36,6 +40,7 @@ public class HomeController {
 		model.addAttribute("peliculas", peliculas);
 		model.addAttribute("fechaBusqueda", format.format(new Date()));
 		model.addAttribute("dias", nextDays);
+		model.addAttribute("banners",serviceBanners.buscarTodos());
 		
 		return "/home";
 	}
