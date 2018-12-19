@@ -1,5 +1,7 @@
 package net.itinajero.app.utileries;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -7,10 +9,14 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.web.multipart.MultipartFile;
+
 public class Utileria {
 	
 	
-	public List<String> getNextDays(int count) {
+	public static List<String> getNextDays(int count) {
 		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
 		
 		Date start = new Date();//get today's date
@@ -28,5 +34,26 @@ public class Utileria {
 		}
 		
 		return nextDays;
+	}
+	
+	public static String guardarImagen(MultipartFile multipart, HttpServletRequest request) {
+		
+		String nombreOriginal = multipart.getOriginalFilename();
+		System.out.println("Original " + nombreOriginal);
+		
+		String rutaFinal = request.getServletContext().getRealPath("/resources/img/");
+		System.out.println("Ruta " + rutaFinal + nombreOriginal);
+		
+		try {
+			File imageFile = new File(rutaFinal +  nombreOriginal);
+			System.out.println(imageFile.getAbsolutePath());
+			multipart.transferTo(imageFile);
+			
+			return nombreOriginal;
+		}catch(IOException e) {
+			System.out.println("Error "+ e.getMessage());
+			return null;
+		}
+		
 	}
 }
