@@ -11,6 +11,15 @@ public class Pelicula {
 	private String imagen;
 	private Date fechaEstreno;
 	private String status = "Activa";
+	private Detalle detalle;
+	
+	public Detalle getDetalle() {
+		return detalle;
+	}
+
+	public void setDetalle(Detalle detalle) {
+		this.detalle = detalle;
+	}
 
 	public int getId() {
 		return id;
@@ -76,11 +85,6 @@ public class Pelicula {
 		this.status = status;
 	}
 
-	@Override
-	public String toString() {
-		return "Pelicula [id=" + id + ", titulo=" + titulo + ", duracion=" + duracion + ", clasificacion="
-				+ clasificacion + ", genero=" + genero + ", imagen=" + imagen + ", fechaEstreno=" + fechaEstreno
-				+ ", status=" + status + "]";
-	}
+	
 	
 }
