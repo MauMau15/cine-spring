@@ -34,9 +34,9 @@
 						<h3 class="card-title">Detalles</h3>
 					</div>
 					<div class="card-body">
-						<p class="card-text mb-1">Titulo Original: </p>
-						<p class="card-text mb-1">Actores: </p>
-						<p class="card-text mb-1">Director: </p>
+						<p class="card-text mb-1">Titulo Original: ${ pelicula.titulo }</p>
+						<p class="card-text mb-1">Actores: ${ pelicula.detalle.actores }</p>
+						<p class="card-text mb-1">Director: ${ pelicula.detalle.director }</p>
 						<p class="card-text mb-1">Clasificacion: ${ pelicula.clasificacion }</p>
 						<p class="card-text mb-1">Duracion: ${ pelicula.duracion } minutos</p>
 						<p class="card-text mb-1">Genero: ${ pelicula.genero }</p>
@@ -48,12 +48,47 @@
 	</div>
 	
 	<div class="container py-5">
+		<div class="card">
+			<div class="card-header">
+				<h1 class="card-title badge badge-success">
+					${ fechaConsultada }
+				</h1>
+			</div>
+			<div class="card-body">
+				<div class="table">
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container py-5">
 		<div class="mb-3">
-			<div class="badge badge-success">${ fechaConsultada }</div>
+			<div class="badge badge-success">Detalles</div>
 		</div>
 		<div class="row">
-			<div class="table">
+			<div class="col-12 col-md-8">
+				<div class="card">
+					<div class="card-header">
+						<h5 class="card-title">Trailer</h5>
+					</div>
+					<div class="card-body">
+						<div class="embed-responsive embed-responsive-16by9">
+						 	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/aj9pUvGv1fo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
 				
+			</div>
+			<div class="col-12 col-md-4">
+				<div class="card">
+					<div class="card-header">
+						<h5 class="card-title">Sinopsis</h5>
+					</div>
+					<div class="card-body">
+						<p class="card-text">${ pelicula.detalle.sinopsis }</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

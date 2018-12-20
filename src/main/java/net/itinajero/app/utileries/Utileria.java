@@ -39,16 +39,12 @@ public class Utileria {
 	public static String guardarImagen(MultipartFile multipart, HttpServletRequest request) {
 		
 		String nombreOriginal = multipart.getOriginalFilename();
-		System.out.println("Original " + nombreOriginal);
 		
 		String rutaFinal = request.getServletContext().getRealPath("/resources/img/");
-		System.out.println("Ruta " + rutaFinal + nombreOriginal);
 		
 		try {
 			File imageFile = new File(rutaFinal +  nombreOriginal);
-			System.out.println(imageFile.getAbsolutePath());
 			multipart.transferTo(imageFile);
-			
 			return nombreOriginal;
 		}catch(IOException e) {
 			System.out.println("Error "+ e.getMessage());

@@ -43,7 +43,7 @@
 		</spring:hasBindErrors>
 		
 		<spring:url value="/peliculas/save" var="urlFormPelicula"></spring:url>
-		<form:form class="form mt-5" action="${ urlFormPelicula }" method="post" enctype="multipart/form-data" modelAttribute="pelicula">
+		<form:form class="form mt-4" action="${ urlFormPelicula }" method="post" enctype="multipart/form-data" modelAttribute="pelicula">
 			<div class="row">
 				<div class="col-12 col-md-3">
 					<div class="form-group">
@@ -105,6 +105,45 @@
 					</div>
 				</div>
 			</div>
+			
+			
+			<div class="row mb-4">
+				<div class="page-header">
+					<h2 class="text text-left">
+						<span class="badge badge-success">Detalles</span>
+					</h2>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-12 col-md-3">
+					<div class="form-group">
+						<label for="director">Director</label>
+						<form:input path="detalle.director" cssClass="form-control" id="director"/>
+					</div>
+				</div>
+				<div class="col-12 col-md-3">
+					<div class="form-group">
+						<label for="actores">Actores</label>
+						<form:input path="detalle.actores" cssClass="form-control" id="actores"/>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="form-group">
+						<label for="sinopsis">Trailer</label>
+						<form:input path="detalle.trailer" cssClass="form-control" id="trailer"/>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="form-group">
+						<label for="sinopsis">Sinopsis</label>
+						<form:textarea path="detalle.sinopsis" cssClass="form-control" id="sinopsis"/>
+					</div>
+				</div>
+			</div>
+			
 			<div class="row">
 				<div class="col-12 col-md-3">
 					<div class="form-group">

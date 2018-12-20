@@ -85,6 +85,18 @@ public class Pelicula {
 		this.status = status;
 	}
 
+	@Override
+	public String toString() {
+		return "Pelicula [id=" + id + ", titulo=" + titulo + ", duracion=" + duracion + ", clasificacion="
+				+ clasificacion + ", genero=" + genero + ", imagen=" + imagen + ", fechaEstreno=" + fechaEstreno
+				+ ", status=" + status + ", detalle=" + detalle + ", getDetalle()=" + getDetalle() + ", getId()="
+				+ getId() + ", getTitulo()=" + getTitulo() + ", getDuracion()=" + getDuracion()
+				+ ", getClasificacion()=" + getClasificacion() + ", getGenero()=" + getGenero() + ", getImagen()="
+				+ getImagen() + ", getFechaEstreno()=" + getFechaEstreno() + ", getStatus()=" + getStatus()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+
 	
 	
 }

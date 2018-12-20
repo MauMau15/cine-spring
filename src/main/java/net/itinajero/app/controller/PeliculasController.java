@@ -10,7 +10,6 @@ import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -51,9 +50,6 @@ public class PeliculasController {
 		
 		if(result.hasErrors()) {
 			System.out.println("existieron errores");
-			for(ObjectError error: result.getAllErrors()) {
-				System.out.println(error.getDefaultMessage());
-			}
 			return "peliculas/formPelicula";
 		}
 		
@@ -62,6 +58,7 @@ public class PeliculasController {
 			pelicula.setImagen(nombreImagen);
 		}
 		
+		System.out.println(pelicula.toString());
 		attribute.addFlashAttribute("mensaje","El registro fue realizado con éxito");
 		return "redirect:/peliculas/index";
 	}
